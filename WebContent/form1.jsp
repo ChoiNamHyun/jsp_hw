@@ -9,7 +9,7 @@
 <body>
 	<% String s=request.getParameter("form1");
 	   int number=(s==null)? -1 : Integer.parseInt(s);
-	   number++;
+	   ++number;
 	 %>
 	 
 <form>
