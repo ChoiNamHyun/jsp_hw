@@ -12,8 +12,13 @@ td { padding: 5px; border: solid 1px gray; font-family: arial; }
 </head>
 <%
 String s=request.getParameter("mid1");
-if(s==null) s="0";
-int num=Integer.parseInt(s);
+int num=0;
+if(s!=null){
+	num=Integer.parseInt(s);
+}
+else{
+	s="0";
+}
 %>
 <body>
 
@@ -21,9 +26,13 @@ int num=Integer.parseInt(s);
 <input type="text" name="mid1" value="<%=s %>">
 <button type="submit" value="단"></button>
 </form>
+
 <table>
-	
-			
+	<%for(int i=1;i<=9;i++){ %>
+		<tr>
+			<td><%=s %> x <%=i %> = <%= num*i %></td>
+		</tr>
+	<% } %>			
 </table>
 </body>
 </html>
