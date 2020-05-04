@@ -24,7 +24,7 @@ else{
 
 <form>
 <input type="text" name="mid1" value="<%=s %>">
-<button type="submit" value="단"></button>
+<button type="submit">단</button>
 </form>
 
 <table>
