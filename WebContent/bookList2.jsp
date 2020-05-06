@@ -26,7 +26,7 @@ List<Book> list = BookDAO.findByName(srchText);
 <h1>학생목록</h1>
 
 <form>
-  <label>이름</label>
+  <label>저자</label>
   <input type="text" name="srchText" value="<%= srchText %>" placeholder="검색조건" />
   <button type="submit">조회</button>
 </form>
@@ -34,21 +34,23 @@ List<Book> list = BookDAO.findByName(srchText);
 <table>
     <thead>
         <tr>
-            <th>사용자아이디</th>
-            <th>이름</th>
-            <th>이메일</th>
-            <th>학과</th>
-            <th>사용자유형</th>
+              <th>id</th>
+              <th>제목</th>
+              <th>저자</th>
+              <th>카테고리</th>
+              <th>가격</th>
+              <th>출판사</th>
         </tr>
     </thead>
     <tbody>
         <% for (Book book : list) { %>
             <tr>
-                <td><%= book.getUserid() %></td>
-                <td><%= book.getName() %></td>
-                <td><%= book.getEmail() %>
-                <td><%= book.getDepartmentName() %></td>
-                <td><%= book.getUserType() %></td>
+                  <td><%=book.getId() %></td>
+                  <td><%=book.getTitle() %></td>
+                  <td><%=book.getAuthor()%></td>
+                  <td><%=book.getCatagoryName() %></td>
+                  <td><%=book.getPrice() %></td>
+                  <td><%=book.getPublisher() %></td>
             </tr>
         <% } %>
     </tbody>
