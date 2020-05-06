@@ -23,7 +23,7 @@ List<Book> list = BookDAO.findByName(srchText);
 
 <div class="container">
 
-<h1>학생목록</h1>
+<h1>책목록</h1>
 
 <form>
   <label>저자</label>
@@ -48,7 +48,7 @@ List<Book> list = BookDAO.findByName(srchText);
                   <td><%=book.getId() %></td>
                   <td><%=book.getTitle() %></td>
                   <td><%=book.getAuthor()%></td>
-                  <td><%=book.getCatagoryName() %></td>
+                  <td><%=book.getCategoryName() %></td>
                   <td><%=book.getPrice() %></td>
                   <td><%=book.getPublisher() %></td>
             </tr>

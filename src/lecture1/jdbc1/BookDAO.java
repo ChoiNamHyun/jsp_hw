@@ -10,8 +10,8 @@ import lecture1.DB;
 
 public class BookDAO {
 	 public static List<Book> findAll() throws Exception {
-	        String sql = "SELECT b.*, c.catagoryName " +
-	                     "FROM book b LEFT JOIN catagory c ON b.catagoryId = c.id";
+	        String sql = "SELECT b.*, c.categoryName " +
+	                     "FROM book b LEFT JOIN category c ON b.categoryId = c.id";
 	        try (Connection connection = DB.getConnection("book");
 	             PreparedStatement statement = connection.prepareStatement(sql);
 	             ResultSet resultSet = statement.executeQuery()) {
@@ -21,7 +21,7 @@ public class BookDAO {
 	            	book.setId(resultSet.getInt("id"));
 	                book.setTitle(resultSet.getString("title"));
 	                book.setAuthor(resultSet.getString("author"));
-	                book.setCatagoryName(resultSet.getString("catagoryName"));
+	                book.setCategoryName(resultSet.getString("categoryName"));
 	                book.setPrice(resultSet.getInt("price"));
 	                book.setPublisher(resultSet.getString("publisher"));
 
@@ -31,8 +31,8 @@ public class BookDAO {
 	        }
 	 }
 	        public static List<Book> findByName(String name) throws Exception {
-	            String sql = "SELECT b.*, c.catagoryName " +
-	                         "FROM book b LEFT JOIN catagory c ON b.catagoryId = c.id " +
+	            String sql = "SELECT b.*, c.categoryName " +
+	                         "FROM book b LEFT JOIN category c ON b.categoryId = c.id " +
 	                         "WHERE u.name LIKE ?";
 	            try (Connection connection = DB.getConnection("book");
 	                 PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -44,7 +44,7 @@ public class BookDAO {
 	                    	book.setId(resultSet.getInt("id"));
 	    	                book.setTitle(resultSet.getString("title"));
 	    	                book.setAuthor(resultSet.getString("author"));
-	    	                book.setCatagoryName(resultSet.getString("catagoryName"));
+	    	                book.setCategoryName(resultSet.getString("categoryName"));
 	    	                book.setPrice(resultSet.getInt("price"));
 	    	                book.setPublisher(resultSet.getString("publisher"));
 
