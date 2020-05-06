@@ -32,13 +32,14 @@ List<Book> list = BookDAO.findAll();
           </tr>
       </thead>
       <tbody>
-          <% for (User user : list) { %>
+          <% for (Book book : list) { %>
               <tr>
-                  <td><%= user.getUserid() %></td>
-                  <td><%= user.getName() %></td>
-                  <td><%=user.getEmail()%></td>
-                  <td><%= user.getDepartmentName() %></td>
-                  <td><%= user.getUserType() %></td>
+                  <td><%=book.getId() %></td>
+                  <td><%=book.getTitle() %></td>
+                  <td><%=book.getAuthor()%></td>
+                  <td><%=book.getCatagoryName() %></td>
+                  <td><%=book.getPrice() %></td>
+                  <td><%=book.getPublisher() %></td>
               </tr>
           <% } %>
       </tbody>
