@@ -19,11 +19,15 @@ public class UserDAO2 {
             ArrayList<User> list = new ArrayList<User>();
             while (resultSet.next()) {
             	User user = new User();
+            	user.setId(resultSet.getInt("id"));
             	user.setUserid(resultSet.getString("userid"));
                 user.setName(resultSet.getString("name"));
                 user.setEmail(resultSet.getString("email"));
+                user.setDepartmentId(resultSet.getInt("departmentId"));
                 user.setDepartmentName(resultSet.getString("departmentName"));
                 user.setUserType(resultSet.getString("userType"));
+                user.setPassword(resultSet.getString("password"));
+            	user.setEnabled(resultSet.getBoolean("enabled"));
 
                 list.add(user);
             }
@@ -42,11 +46,17 @@ public class UserDAO2 {
                 ArrayList<User> list = new ArrayList<User>();
                 while (resultSet.next()) {
                 	User user = new User();
+                	user.setId(resultSet.getInt("id"));
                 	user.setUserid(resultSet.getString("userid"));
                 	user.setName(resultSet.getString("name"));
                 	user.setEmail(resultSet.getString("email"));
+                	user.setDepartmentId(resultSet.getInt("departmentId"));
                 	user.setDepartmentName(resultSet.getString("departmentName"));
                 	user.setUserType(resultSet.getString("userType"));
+                	user.setPassword(resultSet.getString("password"));
+                	user.setEnabled(resultSet.getBoolean("enabled"));
+
+
 
                     list.add(user);
                 }
